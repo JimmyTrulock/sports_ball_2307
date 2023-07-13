@@ -18,5 +18,20 @@ class Team
         count
     end
 
+    def long_term_player
+        roster.select {|player| player.contract_length > 24}
+    end
+
+    def short_term_player
+        roster.select {|player| player.contract_length <= 24}
+    end
+
+    def total_value
+        cost = 0
+        roster.each do |player|
+            cost = cost + player.total_cost
+        end
+        cost
+    end
 end
 

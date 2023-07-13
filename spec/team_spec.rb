@@ -36,3 +36,39 @@ describe 'player_count' do
     end
 end
 
+describe 'long_term_player' do
+    it 'pulls players with a contract greater than 2 years' do
+        team = Team.new("Dodgers", "Los Angeles")
+        player_1 = Player.new("Michael Palledorous" , 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        team.add_player(player_1)
+        team.add_player(player_2)
+        
+    
+    end
+end
+
+describe 'short_term_player' do
+    it 'pulls players with a contract greater than 2 years' do
+        team = Team.new("Dodgers", "Los Angeles")
+        player_1 = Player.new("Michael Palledorous" , 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        team.add_player(player_1)
+        team.add_player(player_2)
+        
+        
+    end
+end
+
+describe 'total_value' do
+    it "puts total cost of team" do
+        team = Team.new("Dodgers", "Los Angeles")
+        player_1 = Player.new("Michael Palledorous" , 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 50000, 24)
+        team.add_player(player_1)
+        team.add_player(player_2)
+
+        expect(team.total_value).to eq("4800000")
+    end
+end
+
