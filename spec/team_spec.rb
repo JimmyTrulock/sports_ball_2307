@@ -72,3 +72,15 @@ describe 'total_value' do
     end
 end
 
+describe 'average_cost_of_player' do
+    it "puts average cost of players in team" do
+        team = Team.new("Dodgers", "Los Angeles")
+        player_1 = Player.new("Michael Palledorous" , 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 50000, 24)
+        team.add_player(player_1)
+        team.add_player(player_2)
+
+        expect(team.average_cost_of_player).to eq("4800000")
+    end
+end
+

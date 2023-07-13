@@ -33,5 +33,14 @@ class Team
         end
         cost
     end
+
+    def average_cost_of_player
+        bucket = []
+        roster.each do |player|
+            bucket << player.total_cost
+        end
+        mean = bucket.sum / bucket.count
+        mean
+    end
 end
 
